@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.container {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template-rows: 1.5fr 5fr;
+}
+
+.gameInfo {
+    height: 50px;
+    border: 2px solid grey;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.playerContainer {
+    font-size: 1.2rem;
+}
+
+.gameArea {  
+    grid-row: 2 / -1;
+    background-color: grey;
+    margin: 0 6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .25rem;
+    border: 2px solid grey;
+    padding: 1rem;
+}
+
+.gameArea > div {
+    padding: 1rem;
+    background-color: white;
+}
+.gameCell {
+    grid-row: span 1;
+    grid-column: span 1;
+    padding: 1rem;
+    transition: transform 0.1s ease
+}
+
+.gameCell:hover {
+    transform: scale(1.01);
+}
