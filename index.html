@@ -13,26 +13,29 @@
 <body>
     <div class="container">
         <div class="gameInfo">
-            <div class="player1Info">
-                <div class="playerContainer">Player 1: <div class="player1Name"></div></div>
-            </div>
-
-            <div class="player2Info">
-                <div class="playerContainer">Player 2:
-                    <div class="player2Name"></div>
+            <div class="playerInfo">
+                <div class="player1Info">
+                    <div class="playerContainer">Player 1 Marker: <strong>X</strong><div class="player1Name"></div></div>
+                </div>
+    
+                <div class="player2Info">
+                    <div class="playerContainer">Player 2 Marker: <strong>O</strong>
+                        <div class="player2Name"></div>
+                    </div>
                 </div>
             </div>
+            <div id="turnInfo"></div>
         </div>
         <div id="gameArea">
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"></div>
-            <div class="gameCell"> </div>
+            <div data-row="0" data-column="0" class="gameCell"></div>
+            <div data-row="0" data-column="1" class="gameCell"></div>
+            <div data-row="0" data-column="2" class="gameCell"></div>
+            <div data-row="1" data-column="0" class="gameCell"></div>
+            <div data-row="1" data-column="1" class="gameCell"></div>
+            <div data-row="1" data-column="2" class="gameCell"></div>
+            <div data-row="2" data-column="0" class="gameCell"></div>
+            <div data-row="2" data-column="1" class="gameCell"></div>
+            <div data-row="2" data-column="2" class="gameCell"> </div>
         </div>
     </div>
 </body>
