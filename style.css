@@ -5,10 +5,11 @@ body {
 }
 .container {
     margin: auto;
-    height: 600px;
+    height: 95vh;
     width: 600px;
     display: grid;
-    grid-template-rows: 1.5fr 5fr;
+    grid-template-rows: 1.5fr 5fr 1fr;
+    position: relative;
 }
 
 .gameInfo {
@@ -70,4 +71,49 @@ body {
 .gameCell:hover {
     transform: scale(1.01);
     cursor: pointer;
+}
+
+#container2 {
+    display: none;
+}
+.final {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+.startBtnDiv {
+    grid-row: 4 / -1;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.startBtn {
+    font-size: 1.5rem;
+    padding: .6rem;
+    outline: none;
+    /* border: none; */
+    border-radius: 2rem;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Background color */
+    opacity: 0.09; /* Opacity (0 to 1) */
+    z-index: 1; /* Place it below the content div */
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Place it above the background div */
+    /* Additional styles for the content div */
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 10px;
 }

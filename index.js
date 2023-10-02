@@ -75,18 +75,83 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (movesCount % 2 != 0) {
                         turnInfo.textContent = "Turn: Player 2"
                         board[row][column] = p1.marker;
+
+                        // checking if player wins
+                        let winner = checkWinner();
                         displayController();
+
+                        if (winner == "X") {
+                            setTimeout(displayWinner("Player 1"), 3000) ;
+                        } else if (winner == "O") {
+                            setTimeout(displayWinner("Player 2"), 3000) 
+                        }
                     } else {
                         turnInfo.textContent = "Turn: Player 1"
                         board[row][column] = p2.marker;
+                        console.log(checkWinner());
                         displayController();
-                    }
 
+                        let winner = checkWinner();
+                        if (winner == "X") {
+                            setTimeout(displayWinner("Player 1"), 3000) ;
+                        } else if (winner == "O") {
+                            setTimeout(displayWinner("Player 2"), 3000) 
+                        }
+
+                    }
                 }
                 
             })
         })
+    };
+
+    const checkWinner = () => {
+            const board = GameBoard.board;
+
+            for (let i = 0; i < 3; i++) {
+                // check rows
+                if (board[i][0] === board[i][1] && board[i][0] === board[i][2] && board[i][0] !== "") {
+                    return board[i][0];
+                }
+
+                // check column
+                if (board[0][i] === board[1][i] && board[0][i] === board[2][i] && board[0][i] !== "") {
+                    return board[0][i];
+                }
+
+                // check diagonal
+                if (board[0][0] === board[1][1] && board[0][0] === board[2][2] || board[0][2] === board[1][1] && board[0][2] && board[0][2] !== "" ) {
+                    return board[1][1]
+                }          
+            }
+
+            return null;
     }
+
+    const displayWinner = (winner) => {
+        const result = document.getElementById('result');
+        const container = document.querySelector('.container');
+        const container2 = document.getElementById('container2');
+
+        container.classList.add('background');
+
+        container2.style.display = "block";
+        container2.classList.add('content')
+        result.textContent = `${winner} wins!`
+        result.classList.add('final')
+
+    }
+
+    const restartGame = (() => {
+        const btns = document.querySelectorAll('.startBtn');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                location.reload();
+            })
+        })
+    }) ();
+
 
     game();
     displayController();
