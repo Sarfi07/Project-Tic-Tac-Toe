@@ -15,14 +15,27 @@ body {
     height: 50px;
     border: 2px solid grey;
     margin: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
     gap: .5rem;
     padding: 1rem;
 }
 
-.playerContainer {
-    font-size: 1.2rem;
+.playerContainer text {
+    font-size: .8rem;
+}
+
+.playerInfo {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1.6rem;
+}
+
+#turnInfo {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    text-align: center;
+
 }
 
 #gameArea {  
