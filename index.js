@@ -85,6 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else if (winner == "O") {
                             setTimeout(displayWinner("Player 2"), 3000) 
                         }
+
+                        if (movesCount == 9) {
+                            displayWinner();
+                        }
                     } else {
                         turnInfo.textContent = "Turn: Player 1"
                         board[row][column] = p2.marker;
@@ -97,6 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else if (winner == "O") {
                             setTimeout(displayWinner("Player 2"), 3000) 
                         }
+
+                        if (movesCount == 9) {
+                            displayWinner();
+                        }
+
 
                     }
                 }
@@ -133,14 +142,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector('.container');
         const container2 = document.getElementById('container2');
 
-        container.classList.add('background');
+        if (winner) {
+            container.classList.add('background');
+    
+            container2.style.display = "block";
+            container2.classList.add('content')
+            result.textContent = `${winner} wins!`
+            result.classList.add('final')
+        } else {
+            container.classList.add('background');
+    
+            container2.style.display = "block";
+            container2.classList.add('content')
+            result.textContent = `Tie!`
+            result.classList.add('final')
+        }
 
-        container2.style.display = "block";
-        container2.classList.add('content')
-        result.textContent = `${winner} wins!`
-        result.classList.add('final')
 
     }
+
 
     const restartGame = (() => {
         const btns = document.querySelectorAll('.startBtn');
