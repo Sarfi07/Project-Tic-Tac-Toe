@@ -1,56 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Tic Tac Toe</title>
+    <title>Project: Tic Tac Toe_v2</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="gameInfo">
-            <div class="playerInfo">
-                <div class="player1Info">
-                    <div class="playerContainer">Player 1 Marker: <strong>X</strong><div class="player1Name"></div></div>
-                </div>
-    
-                <div class="player2Info">
-                    <div class="playerContainer">Player 2 Marker: <strong>O</strong>
-                        <div class="player2Name"></div>
-                    </div>
-                </div>
+    <!-- TODO: chooseMarker gameBoard result restartButton -->
+    <div class="gameSpace">
+        <section class="chooseMarker">
+            <div class="title">Choose Your Marker</div>
+            <div class="markers">
+                <button id="X">X</button>
+                <button id="O">O</button>
             </div>
-            <div id="turnInfo"></div>
-        </div>
-        <div id="gameArea">
-            <div data-row="0" data-column="0" class="gameCell"></div>
-            <div data-row="0" data-column="1" class="gameCell"></div>
-            <div data-row="0" data-column="2" class="gameCell"></div>
-            <div data-row="1" data-column="0" class="gameCell"></div>
-            <div data-row="1" data-column="1" class="gameCell"></div>
-            <div data-row="1" data-column="2" class="gameCell"></div>
-            <div data-row="2" data-column="0" class="gameCell"></div>
-            <div data-row="2" data-column="1" class="gameCell"></div>
-            <div data-row="2" data-column="2" class="gameCell"> </div>
-        </div>
-
-        <div class="startBtnDiv">
-            <button class="startBtn">Restart</button>
-        </div>
+        </section>
+        <section class="gameBoard">
+                <div class="gameCell no-b-tl"></div>
+                <div class="gameCell no-b-t"></div>
+                <div class="gameCell no-b-tr"></div>
+                <div class="gameCell no-b-l"></div>
+                <div class="gameCell"></div>
+                <div class="gameCell no-b-r"></div>
+                <div class="gameCell no-b-lb"></div>
+                <div class="gameCell no-b-b"></div>
+                <div class="gameCell no-b-br"></div>
+        </section>
+        <section class="resetButton">
+            <button id="restartBtn">Restart</button>
+        </section>
     </div>
 
-
-    <div id="container2">
-        <div id="result">   
-        </div>
-        <div class="startBtnDiv">
-            <button class="startBtn">Restart</button>
-        </div>
-    </div>
+    <div class="resultSection"></div>
 </body>
-
 </html>

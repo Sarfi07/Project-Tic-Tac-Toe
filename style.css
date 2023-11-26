@@ -1,117 +1,102 @@
-body {
-    display: flex;
-    justify-content: center;
+* {
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
 }
-.container {
+
+
+
+.gameSpace {
+    width: 60%;
+    height: 50rem;
     margin: auto;
-    height: 95vh;
-    width: 600px;
     display: grid;
-    grid-template-rows: 1.5fr 5fr 1fr;
-    position: relative;
+    grid-template-rows: 1fr 3fr 1fr;
+    gap: 4px;
 }
 
-.gameInfo {
-    height: 50px;
-    border: 2px solid grey;
-    margin: 2rem;
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
-    gap: .5rem;
-    padding: 1rem;
-}
-
-.playerContainer text {
-    font-size: .8rem;
-}
-
-.playerInfo {
+.chooseMarker {
+    grid-row: 1 / 2;
     display: flex;
-    justify-content: space-around;
-    padding-bottom: 1.6rem;
+    flex-direction: column;
 }
-
-#turnInfo {
+.gameBoard {
     grid-row: 2 / 3;
-    grid-column: 1 / 3;
-    text-align: center;
-
-}
-
-#gameArea {  
-    grid-row: 2 / -1;
-    background-color: grey;
-    margin: 0 6rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: .25rem;
-    border: 2px solid grey;
-    padding: 1rem;
+}
+.gameBoard .gameCell {
+    grid: span 1 / span 1;
+    border: 4px solid rgb(30, 30, 172);
 }
 
-#gameArea > div {
-    padding: 1rem;
-    background-color: white;
-}
-.gameCell {
-    grid-row: span 1;
-    grid-column: span 1;
-    padding: 1rem;
-    transition: transform 0.1s ease;
-    text-align: center;
-    font-size: 5rem;
-    font-weight: bold;
+.resetButton {
+    grid-row: 3 / 4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.gameCell:hover {
-    transform: scale(1.01);
-    cursor: pointer;
-}
-
-#container2 {
-    display: none;
-}
-.final {
-    display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-}
-
-.startBtnDiv {
-    grid-row: 4 / -1;
-    text-align: center;
-    padding-top: 3rem;
-}
-
-.startBtn {
+#restartBtn {
     font-size: 1.5rem;
-    padding: .6rem;
-    outline: none;
-    /* border: none; */
-    border-radius: 2rem;
 }
 
-.background {
-    position: absolute;
-    top: 0;
+
+.chooseMarker .title {
+    flex: 1;
+    font-size: 2rem;
     margin: auto;
-    background-color: #000; /* Background color */
-    opacity: 0.09; /* Opacity (0 to 1) */
-    z-index: 1; /* Place it below the content div */
+    padding-top: 1rem;
+}
+.chooseMarker .markers {
+    flex: 2;
+    justify-self: center;
+    margin: auto;
+    gap: 2rem;
+}
+div.markers {
+    display: flex;
+    align-items: center;
+}
+.markers button {
+    /* all: unset; */
+    width: 8rem;
+    font-size: 1.4rem;
+    /* background-color: beige;
+    display: flex;
+    justify-content: center;
+    cursor: pointer; */
 }
 
-.content {
-    position: relative;
-    z-index: 2; /* Place it above the background div */
-    /* Additional styles for the content div */
-    /* background-color: #fff; */
-    padding: 20px;
-    border-radius: 10px;
+
+/* borders */
+div.gameCell.no-b-tl {
+    border-top: none;
+    border-left: none;
+}
+div.gameCell.no-b-t {
+    border-top: none;
+}
+div.gameCell.no-b-tr {
+    border-top: none;
+    border-right: none;
+}
+div.gameCell.no-b-l {
+    border-left: none;
+}
+div.gameCell.no-b-r {
+    border-right: none;
+}
+div.gameCell.no-b-lb {
+    border-bottom: none;
+    border-left: none;
+}
+div.gameCell.no-b-b {
+    border-bottom: none;
+}
+div.gameCell.no-b-br {
+    border-bottom: none;
+    border-right: none;
 }
