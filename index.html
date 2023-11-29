@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Tic Tac Toe_v2</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
 <body>
     <!-- TODO: chooseMarker gameBoard result restartButton -->
     <div class="gameSpace">
-        <section class="chooseMarker">
-            <div class="title">Choose Your Marker</div>
-            <div class="markers">
-                <button id="X">X</button>
-                <button id="O">O</button>
+        <section class="markerInfo">
+            <div class="playerInfo">
+                <div class="title">Player One:
+                    <button class="marker" id="X">X</button>
+                </div>
+            </div>
+            <div class="playerInfo">
+                <div class="title">Player Two:
+                    <button class="marker" id="O">O</button>
+                </div>
             </div>
         </section>
-        <section class="gameBoard">
+        <section class="gameBoard" id="gameBoard">
                 <div class="gameCell no-b-tl"></div>
                 <div class="gameCell no-b-t"></div>
                 <div class="gameCell no-b-tr"></div>
@@ -29,10 +33,17 @@
                 <div class="gameCell no-b-br"></div>
         </section>
         <section class="resetButton">
-            <button id="restartBtn">Restart</button>
+            <button class="restartBtn">Restart</button>
         </section>
     </div>
 
-    <div class="resultSection"></div>
+    <dialog class="modal" id="modal">
+        <div class="wrapper">
+            <div id="resultText"></div>
+            <button class="restartBtn">Restart</button>
+        </div>
+    </dialog>
+
+    <script src="index.js"></script>
 </body>
 </html>
